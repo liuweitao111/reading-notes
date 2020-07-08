@@ -1,6 +1,9 @@
 # 技巧
 * 页面某个模块的文字内容是动态的，可能是几个字，也可能是一句话。然后，希望文字少的时候居中显示，文字超过一行的时候居左显示。该如何实现？
+
 解析：利用inline-block元素、浮动元素以及绝对定位元素都具有包裹性（元素尺寸由内部元素决定，但永远小于“包含块”容器的尺寸）。
+
+[codepen](https://codepen.io/liuweitao/pen/MWKGKEX)
 
 HTML
 ```html
@@ -22,7 +25,10 @@ CSS
 }
 ```
 * 实现任意高度元素的展开收起
+
 解析： 可以添加一个隐藏的checkbox，然后通过设置选中的样式实现展开和收起。
+
+[codepen](https://codepen.io/liuweitao/pen/NWxMxzw)
 
 HTML
 ```html
@@ -60,6 +66,7 @@ input[type="checkbox"] {
 }
 ```
 * 实现任意高度元素的展开收起（带有动画效果）
+
 解析： 这里需要注意，如果给element设置height=0，:checked~.element中height=auto，也能实现展开和收起，但是没有动画效果。
 
 HTML
