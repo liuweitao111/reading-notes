@@ -107,3 +107,44 @@ input[type="checkbox"] {
   display: none;
 }
 ```
+* 基于 vertical-align 属性的水平垂直居中弹框
+
+解析： 首先借助伪元素创建了一个和外部容器一样高的宽度为0的inline-block元素，设置vertical-align: middle使x的中心点在容器的垂直中心位置，再给dialog设置vertical-align: middle;
+
+[codepen](https://codepen.io/liuweitao/pen/XWXqXBG)
+
+HTML
+```html
+<div class="container">
+  <div class="dialog">我是一个对话框</div>
+</div>
+```
+CSS
+```css
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.5);
+  text-align: center;
+  font-size: 0;
+  overflow: auto; /* 即便高度超出，也能正常显示*/
+  z-index: 99;
+}
+.container:after{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.dialog {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 20px 20px;
+}
+```
